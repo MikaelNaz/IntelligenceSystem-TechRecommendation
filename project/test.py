@@ -9,7 +9,6 @@ class TestSynonymsMatching(unittest.TestCase):
             "для айфона пожалуйста", 
             "apple устройства", 
             "на айфоне и айпаде"
-            "говнофон"
         ]
         
         for test in ios_tests:

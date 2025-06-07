@@ -1203,7 +1203,7 @@ def restart_session(user_id: str):
 RAMBLER_SMTP_SERVER = "smtp.rambler.ru"
 RAMBLER_SMTP_PORT = 465 
 RAMBLER_EMAIL = "mikaelnaz@rambler.ru"  
-RAMBLER_PASSWORD = "m1razetkatv"  
+RAMBLER_PASSWORD = "*****"  
 
 @app.post("/send_email/")
 def send_email(request: EmailRequest):

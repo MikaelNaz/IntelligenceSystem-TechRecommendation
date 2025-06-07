@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Интеллектуальная система</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+</head>
+<body>
+    <div class="container">
+        <aside class="sidebar">
+            <h2>Меню</h2>
+            <ul>
+                <li><a href="#" id="menu">Главная</a></li>
+                <li><a href="#" id="historyBtn">История рекомендаций</a></li>
+                <li><a href="#" id="settings">Настройки</a></li>
+            </ul>
+            <div id="history"></div>
+        </aside>
+
+        <main class="chat-container">
+            <div class="chat-box" id="chat">
+                <div class="chat-message system">
+                    <p>Привет! Давайте начнем. Какой тип приложения вы разрабатываете?</p>
+                    <small style="color: gray;">Например: нативное, кроссплатформенное или гибридное</small>
+                </div>
+            </div>
+
+            <div class="chat-input">
+                <input type="text" id="userInput" placeholder="Введите ответ..." />
+                <button id="sendBtn" type="button">Отправить</button>
+            </div>
+        </main>
+
+        <section id="historyPanel" class="content" style="display: none;">
+            <h2>История рекомендаций</h2>
+            <div id="projectsList">
+                <p>Здесь появятся ваши рекомендации.</p>
+            </div>
+        </section>
+
+        <section class="recommendation-panel">
+            <h2>Рекомендации</h2>
+            <div id="recommendations">
+                <p>Здесь появятся рекомендации после анализа.</p>
+            </div>
+            <button class="btn" id="savePdfBtn">Сохранить в PDF</button>
+            <button class="btn" id="restartFormBtn">Заполнить форму заново</button>
+            <button class="btn" id="sendEmailBtn">Отправить на Email</button>
+            <button class="btn" id="refineBtn">Запросить доработку</button>
+        </section>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="script.js"></script>
+    <div class="modal-overlay" id="emailModal">
+        <div class="modal-container">
+            <div class="modal-title">Введите ваш email для получения рекомендаций</div>
+            <input type="email" class="modal-input" id="emailInput" placeholder="your@email.com">
+            <div class="modal-buttons">
+                <button class="modal-btn modal-btn-cancel" id="cancelEmailBtn">Отмена</button>
+                <button class="modal-btn modal-btn-submit" id="submitEmailBtn">Отправить</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

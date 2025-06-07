@@ -82,26 +82,6 @@ function getRecommendation() {
             let recommendationsDiv = document.getElementById("recommendations");
             // Вызов функции после получения ответа от бота
             console.log("Обновляем рекомендации:", data);
-            // recommendationsDiv.innerHTML = "";
-            
-            // if (data.length === 0) {
-            //     recommendationsDiv.innerHTML = "<p>Нет рекомендаций. Завершите опрос.</p>";
-            //     return;
-            // }
-            
-        //     data.forEach(project => {
-        //         let rec = document.createElement("div");
-        //         rec.className = "recommendation-item";
-        //         rec.innerHTML = `
-        //             <h3>${project.project_name}</h3>
-        //             <p><strong>Рекомендация:</strong> ${project.recommendation}</p>
-        //             <p><strong>Тип:</strong> ${project.type}</p>
-        //             <p><strong>Платформа:</strong> ${project.platform}</p>
-        //             <p><strong>Бюджет:</strong> ${project.budget}</p>
-        //             <p><strong>Опыт:</strong> ${project.experience_level}</p>
-        //         `;
-        //         recommendationsDiv.appendChild(rec);
-        //     });
         })
         .catch(error => {
             console.error("Ошибка при получении рекомендаций:", error);
@@ -137,21 +117,6 @@ document.head.insertAdjacentHTML('beforeend', `
     }
     </style>
     `);
-
-// document.addEventListener("DOMContentLoaded", function () {
-//     let historyPanel = document.getElementById("historyPanel");
-//     let historyBtn = document.getElementById("historyBtn");
-
-//     historyBtn.addEventListener("click", function (event) {
-//         event.preventDefault();
-//         if (historyPanel.style.display === "none" || historyPanel.style.display === "") {
-//             loadProjectHistory();  // Загружаем проекты только если панель открывается
-//             historyPanel.style.display = "block";
-//         } else {
-//             historyPanel.style.display = "none";
-//         }
-//     });
-// });
 
 document.addEventListener("DOMContentLoaded", function () {
     const historyPanel = document.getElementById("historyPanel");
@@ -651,48 +616,6 @@ function initEmailModal() {
         }
     });
 }
-
-// document.getElementById("sendEmailBtn").addEventListener("click", function () {
-//     let userEmail = prompt("Введите ваш email для получения рекомендаций:");
-//     if (!userEmail) {
-//         alert("Вы не ввели email!");
-//         return;
-//     }
-
-//     // Добавляем сообщение о начале отправки
-//     addMessageToChat({
-//         type: "system",
-//         text: "Отправляем рекомендации на вашу почту..."
-//     }, true);
-
-//     fetch("http://127.0.0.1:8000/send_email/", {
-//         method: "POST",
-//         headers: { "Content-Type": "application/json" },
-//         body: JSON.stringify({ 
-//             user_email: userEmail.trim(), 
-//             user_id: userId  
-//         })
-//     })
-//     .then(response => response.json())
-//     .then(data => {
-//         // Добавляем сообщение об успешной отправке
-//         addMessageToChat({
-//             type: "system",
-//             text: "Рекомендации успешно отправлены на вашу почту: " + userEmail
-//         }, true);
-        
-//         // Также показываем alert для дополнительного уведомления
-//         alert(data.message || data.error);
-//     })
-//     .catch(error => {
-//         console.error("Ошибка отправки email:", error);
-//         // Добавляем сообщение об ошибке
-//         addMessageToChat({
-//             type: "system",
-//             text: "Произошла ошибка при отправке рекомендаций на почту. Пожалуйста, попробуйте позже."
-//         }, true);
-//     });
-// });
 
 // Загрузка после DOM
 window.addEventListener("DOMContentLoaded", () => {
